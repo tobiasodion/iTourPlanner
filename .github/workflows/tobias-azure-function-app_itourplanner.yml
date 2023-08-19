@@ -6,7 +6,7 @@ name: Build and deploy dotnet core project to Azure Function App - itourplanner
 on:
   push:
     branches:
-      - tobias/azure-function-app/api
+      - tobias/azure-function-app
   workflow_dispatch:
 
 env:
