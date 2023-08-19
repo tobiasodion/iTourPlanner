@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
-namespace ITourParis.Function
+namespace ITourPlanner.Service
 {
     public class GetTourPlan
     {
