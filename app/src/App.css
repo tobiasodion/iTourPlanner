@@ -1,0 +1,51 @@
+.coming-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.content {
+  margin: center;
+}
+
+h1 {
+  color: #E80C3E;
+}
+
+p {
+  color: #196AB1;
+  font-size: 18px;
+}
+
+.custom-font {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36px;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 600px) { /* Mobile devices */
+  .custom-font {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) { /* Tablets */
+  .custom-font {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
