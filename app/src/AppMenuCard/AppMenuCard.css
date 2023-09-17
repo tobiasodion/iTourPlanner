@@ -1,0 +1,22 @@
+.app-menu-item{
+    background-color: whitesmoke;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.app-link{
+    text-align: right;
+}
+
+.app-menu-item a {
+    background-color: #E80C3E;
+    color: white;
+    margin: auto;
+    padding: 2%;
+    border-radius: 15px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+}
