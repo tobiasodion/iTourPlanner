@@ -1,17 +1,18 @@
 import React from 'react';
-import logo from './itourparis-logo.svg'
 import './App.css';
 import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer';
-import ComingSoon from './ComingSoon/ComingSoon';
+import AppMenuList from './AppMenuList/AppMenuList';
 
 function App() {
   return (
-    <div className='container'>
-    <NavBar/>
-    <ComingSoon />
-    <Footer/>
-    </div>
+    <>
+      <NavBar />
+      <div className='container'>
+        <AppMenuList />
+      </div>
+      <Footer />
+    </>
   );
 }
 
