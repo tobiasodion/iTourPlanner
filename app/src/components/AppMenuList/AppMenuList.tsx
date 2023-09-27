@@ -1,13 +1,13 @@
 import React from 'react';
 import './AppMenuList.css';
-import data from '../Data/contentData.json';
 import AppMenuCard from '../AppMenuCard/AppMenuCard';
+import {AppMenuListProp} from '../../types/PropTypes';
 
-function AppMenuList() {
+function AppMenuList (props : AppMenuListProp) {
   return (
     <div className="app-menu-list">
-      {data.appMenuCardData.map((item) => (
-        <AppMenuCard data={item} />
+      {props.appMenuList.map((item) => (
+        <AppMenuCard {...item} />
       ))}
     </div>
   );
