@@ -21,8 +21,13 @@
     color: white;
 }
 
-.navbar .active {
+.navbar .active a {
     background-color: #E80C3E;
+}
+
+.app-menu-item a {
+    background-color: #E80C3E;
+
 }
 
 .navbar li a {

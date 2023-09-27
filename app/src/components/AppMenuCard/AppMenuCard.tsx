@@ -1,10 +1,10 @@
 import React from 'react';
 import './AppMenuCard.css';
-import AppMenuCardData from '../Types/AppMenuCardData';
+import { AppMenuCardProp } from '../../types/PropTypes';
+import { Link } from 'react-router-dom';
 
-function AppMenuCard(props: AppMenuCardData) {
-  const { id, name, description } = props.data;
-
+function AppMenuCard(props: AppMenuCardProp) {
+  const { id, name, description, link } = props;
   return (
     <div key={id} className="app-menu-item">
       <div className="app-name">
@@ -14,7 +14,7 @@ function AppMenuCard(props: AppMenuCardData) {
         <p>{description}</p>
       </div>
       <div className="app-link">
-        <a>Try App</a>
+        <Link to={link}>Try App</Link>
       </div>
     </div>
   );

@@ -1,18 +1,12 @@
 import React from 'react';
-import './App.css';
-import NavBar from './NavBar/NavBar';
-import Footer from './Footer/Footer';
-import AppMenuList from './AppMenuList/AppMenuList';
+import Router from './router/Router';
+import AppLayout from './layout/AppLayout';
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <div className='container'>
-        <AppMenuList />
-      </div>
-      <Footer />
-    </>
+    <AppLayout>
+      <Router />
+    </AppLayout>
   );
 }
 

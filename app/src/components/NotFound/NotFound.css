@@ -1,0 +1,21 @@
+.coming-soon {
+    padding: 10% 10% 10% 10%;
+}
+
+.coming-soon img{
+    display: block;
+    margin: auto;
+}
+
+h1 {
+    color: #E80C3E;
+}
+
+p {
+    color: #196AB1;
+    font-size: 18px;
+}
+
+.logo {
+    max-width: 100%;
+}

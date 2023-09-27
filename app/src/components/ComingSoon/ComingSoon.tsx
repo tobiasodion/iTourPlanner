@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../itourparis-logo.svg';
+import logo from '../../itourparis-logo.svg';
 import './ComingSoon.css';
 
 function ComingSoon() {
