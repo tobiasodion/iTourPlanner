@@ -17,5 +17,3 @@ function AppContainer({ children }: LayoutProp) {
 }
 
 export default AppContainer;
-
-//<AppMenuList {...appMenuListData} />

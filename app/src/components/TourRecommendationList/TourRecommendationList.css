@@ -1,0 +1,41 @@
+.recommendation-list-paged {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.recommendation-list-page-nav {
+    display: flex;
+    justify-content: center;
+    /* Horizontally center children */
+    align-items: center;
+    /* Vertically center children */
+    /* Add other styles as needed */
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.recommendation-list-page-nav span{
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.recommendation-list-page-nav button {
+    display: inline-block;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.recommendation-list-page-nav button:hover {
+    background-color: #0056b3;
+}
+
+.recommendation-list-page-nav button:disabled {
+    background-color: #5d97d0;
+}
