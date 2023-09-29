@@ -1,0 +1,86 @@
+.recommendation-form {
+    background-color: whitesmoke;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.recommendation-form .form-group {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.recommendation-form .form-group label {
+    width: 100px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.recommendation-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.recommendation-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the custom dropdown */
+.recommendation-form .custom-dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    /* Dropdown background color */
+    color: #333;
+    /* Dropdown text color */
+    cursor: pointer;
+    outline: none;
+    /* Remove outline on focus */
+}
+
+/* Style the dropdown arrow (optional) */
+.recommendation-form .custom-dropdown::after {
+    content: '\25BC';
+    /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* Make the arrow not selectable */
+}
+
+/* Style dropdown options (optional) */
+.recommendation-form .custom-dropdown option {
+    background-color: #fff;
+    /* Option background color */
+    color: #333;
+    /* Option text color */
+    padding: 10px;
+}
+
+/* Change styles on hover (optional) */
+.recommendation-form .custom-dropdown:hover {
+    border-color: #007bff;
+    /* Border color on hover */
+}
+
+/* Change styles on focus (optional) */
+.recommendation-form .custom-dropdown:focus {
+    border-color: #007bff;
+    /* Border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Add a subtle box shadow on focus */
+}

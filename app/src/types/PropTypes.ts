@@ -19,3 +19,25 @@ export type AppMenuListProp = {
 export type LayoutProp = {
         children: ReactNode;
 };
+
+export type TourRecommendationCardProp = {
+        name: string;
+        description: string;
+        address: string;
+        entry: number;
+        website: string;
+}
+
+export type TourRecommendationListProp = {
+        tourRecommendationList: {
+                name: string;
+                description: string;
+                address: string;
+                entry: number;
+                website: string;
+        }[];
+}
+
+export type TourRecommendationFormProps = {
+        onRecommendationsChange: (recommendations: TourRecommendationListProp) => void; // Define the type of the onClick prop
+};
