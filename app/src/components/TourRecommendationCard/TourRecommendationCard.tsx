@@ -1,7 +1,6 @@
 import React from 'react';
 import './TourRecommendationCard.css';
 import { TourRecommendationCardProp } from '../../types/PropTypes';
-import { Link } from 'react-router-dom';
 
 function TourRecommendationCard(props: TourRecommendationCardProp) {
   const { name, description, address, entry, website } = props;
@@ -14,7 +13,7 @@ function TourRecommendationCard(props: TourRecommendationCardProp) {
         <h4>{address}</h4>
       </div>
       <div className="recommendation-description">
-        <p>{description}<span><Link to={website}>see more</Link></span></p>
+        <p>{description}<span><a href={website} target="_blank" rel="noopener noreferrer">visit website</a></span></p>
       </div>
       <div className="recommendation-entry">
         Entry: ${entry}
