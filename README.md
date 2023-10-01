@@ -11,5 +11,5 @@ This repo contains two projects:
 
 - Navigate to /app folder
 - Create a .env file
-- Add the oopenAI api key-value 'REACT_APP_OPENAI_KEY=your-openai-key' to the .env file
-- Start the react app using 'npm start'
+- Add the oopenAI api key-value `REACT_APP_OPENAI_KEY=your-openai-key` to the .env file
+- Start the react app using `npm start`
