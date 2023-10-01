@@ -22,7 +22,7 @@ export const getCompletion = async (prompt: string) => {
         });
         return response.data.choices[0].text;
     } catch (error) {
-        console.error('Error calling OpenAI API:', error);
+       //log error
         throw error;
     }
 };

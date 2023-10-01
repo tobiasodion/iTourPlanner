@@ -23,13 +23,15 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
 
     const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
+        props.onLoading(true)
         if (selectedCity === '') {
+            props.onLoading(false);
             setError('Please select a city');
             return;
         }
 
         if (selectedInterest === '') {
+            props.onLoading(false);
             setError('Please select an interest');
             return;
         }
@@ -49,6 +51,7 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
             const matches = result.match(regex);
 
             if (!matches || matches.length === 0) {
+                props.onLoading(false);
                 throw new Error(`Invalid JSON string result. Result: ${result}`);
             }
 
@@ -57,15 +60,18 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
             const recommendations: TourRecommendationCardProp[] = JSON.parse(match);
 
             if (!recommendations || recommendations.length === 0) {
+                props.onLoading(false);
                 throw new Error(`Empty JSON array. JSON: ${recommendations}`);
             }
 
             let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: recommendations };
 
             props.onRecommendationsChange({ ...tourRecommendationListData });
-
+            props.onLoading(false);
         } catch (error) {
-            alert(`something went wrong! Error: ${error}`);
+            //log error
+            alert(`something went wrong!`);
+            props.onLoading(false);
         }
     };
 
