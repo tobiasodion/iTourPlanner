@@ -39,5 +39,11 @@ export type TourRecommendationListProp = {
 }
 
 export type TourRecommendationFormProps = {
-        onRecommendationsChange: (recommendations: TourRecommendationListProp) => void; // Define the type of the onClick prop
+        onRecommendationsChange: (recommendations: TourRecommendationListProp) => void;
+        onLoading: (isLoading: boolean) => void;
 };
+
+export type SpinnerProps = {
+        size: number;
+        message: string;
+}

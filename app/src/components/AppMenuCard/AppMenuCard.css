@@ -1,4 +1,4 @@
-.app-menu-item{
+.app-menu-item {
     background-color: whitesmoke;
     margin-left: 10%;
     margin-right: 10%;
@@ -6,7 +6,7 @@
     border-radius: 10px;
 }
 
-.app-link{
+.app-link {
     text-align: right;
 }
 
@@ -19,4 +19,14 @@
     text-align: left;
     text-decoration: none;
     display: inline-block;
+}
+
+@media (min-width: 601px) {
+    .app-menu-item {
+        padding: 2%;
+    }
+
+    .app-menu-item a {
+        padding: 1%;
+    }
 }
