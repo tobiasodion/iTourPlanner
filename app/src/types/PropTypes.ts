@@ -44,6 +44,6 @@ export type TourRecommendationFormProps = {
 };
 
 export type SpinnerProps = {
-        size: number;
-        message: string[];
+        spinnerDiameter: number;
+        loadingMessages: string[];
 }

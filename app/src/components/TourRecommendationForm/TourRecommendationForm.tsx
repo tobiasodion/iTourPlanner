@@ -70,7 +70,6 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
             }
 
             let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: recommendations };
-            console.log({ ...tourRecommendationListData });
             props.onRecommendationsChange({ ...tourRecommendationListData });
             props.onLoading(false);
             setIsButtonDisabled(false);

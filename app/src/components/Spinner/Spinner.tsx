@@ -3,13 +3,21 @@ import './Spinner.css';
 import { SpinnerProps } from '../../types/PropTypes';
 
 function Spinner(props: SpinnerProps) {
-  const [message, setMessage] = useState<string>(props.message[0]);
+  const {loadingMessages, spinnerDiameter} = props;
+  const [messageIndex, setMessageIndex] = useState<number>(0);
+  const [message, setMessage] = useState<string>(loadingMessages[messageIndex]);
   const messageChangeIntervalInMilliseconds = 5000;
   const messageVisibilityIntervalInMilliseconds = 4000;
 
   useEffect(() => {
+    //TO DO: Review this logic
     const updateMessage = () => {
-      setMessage(props.message[1]);
+      let index = messageIndex;
+      setMessage(loadingMessages[++index]);
+      setMessageIndex(index);
+
+      if(index === loadingMessages.length - 1)
+        setMessageIndex(-1);
     };
 
     const intervalId = setInterval(updateMessage, messageChangeIntervalInMilliseconds);
@@ -18,7 +26,7 @@ function Spinner(props: SpinnerProps) {
     return () => {
       clearInterval(intervalId);
     };
-  }, [props.message]);
+  }, [message]);
 
   useEffect(() => {
     // Add the 'visible' class to trigger the fade-in effect
@@ -35,7 +43,7 @@ function Spinner(props: SpinnerProps) {
 
   return (
     <div className="spinner-container">
-      <div className="spinner" style={{ width: props.size, height: props.size }}>
+      <div className="spinner" style={{ width: spinnerDiameter, height: spinnerDiameter }}>
         <div className="spinner-inner"></div>
       </div>
       <div className="spinner-message">{message}</div>
