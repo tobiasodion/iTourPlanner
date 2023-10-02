@@ -18,7 +18,7 @@ function TourRecommendation() {
 
     const spinnerProps : SpinnerProps = {
         size : 50,
-        message: "Please wait..."
+        message: ["Please wait while we get your recommendations...", "Loading Recommendations...", "Almost there..."]
     }
 
     return (
