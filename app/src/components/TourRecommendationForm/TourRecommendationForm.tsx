@@ -7,6 +7,7 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
     const [selectedCity, setSelectedCity] = useState<string>('');
     const [selectedInterest, setSelectedInterest] = useState<string>('');
     const [error, setError] = useState<string>('');
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
     const cities = ['Paris', 'Lagos', 'Barcelona', 'Lisbon'];
     const interests = ['Art', 'Sports', 'Music', 'Food'];
@@ -23,15 +24,19 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
 
     const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        props.onLoading(true)
+        props.onLoading(true);
+        setIsButtonDisabled(true);
+
         if (selectedCity === '') {
             props.onLoading(false);
+            setIsButtonDisabled(false);
             setError('Please select a city');
             return;
         }
 
         if (selectedInterest === '') {
             props.onLoading(false);
+            setIsButtonDisabled(false);
             setError('Please select an interest');
             return;
         }
@@ -65,13 +70,17 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
             }
 
             let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: recommendations };
-
+            console.log({ ...tourRecommendationListData });
             props.onRecommendationsChange({ ...tourRecommendationListData });
             props.onLoading(false);
+            setIsButtonDisabled(false);
         } catch (error) {
             //log error
-            alert(`something went wrong!`);
+            alert(`Oops! We could not get your recommendations. Please try again`);
             props.onLoading(false);
+            setIsButtonDisabled(false);
+            let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: [] };
+            props.onRecommendationsChange({ ...tourRecommendationListData });
         }
     };
 
@@ -100,7 +109,9 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
                 </select>
             </div>
             {error && <div style={{ color: 'red' }}>{error}</div>}
-            <button type="submit">Recommend</button>
+            <button className={isButtonDisabled ? 'disabled-button' : ''} disabled={isButtonDisabled} type="submit">
+                Recommend
+            </button>
         </form>
     )
 }

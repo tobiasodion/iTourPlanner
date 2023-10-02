@@ -85,6 +85,21 @@
     /* Add a subtle box shadow on focus */
 }
 
+/* Disabled button styles */
+.recommendation-form button.disabled-button {
+    pointer-events: none;
+    /* Disable pointer events to prevent hover effects */
+    background-color: #ccc;
+    /* Change the background color for disabled state */
+    cursor: not-allowed;
+    /* Change cursor style */
+}
+
+/* Disabled button styles */
+.recommendation-form button.disabled-button:hover {
+    background-color: #ccc;
+}
+
 @media (min-width: 601px) {
 
     .recommendation-form {
