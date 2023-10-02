@@ -8,7 +8,7 @@ function Spinner(props: SpinnerProps) {
       <div className="spinner" style={{ width: props.size, height: props.size }}>
         <div className="spinner-inner"></div>
       </div>
-      <div className="spinner-message">please wait...</div>
+      <div className="spinner-message">{props.message}</div>
     </div>
   );
 };

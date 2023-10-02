@@ -30,9 +30,8 @@ function TourRecommendation() {
             </div>
             <div>
                 {loading ? (<Spinner {...spinnerProps}></Spinner>) : null}
-                {recommendations === undefined || loading ? null : (<TourRecommendationList {...recommendations}></TourRecommendationList>)}
+                {recommendations?.tourRecommendationList.length === 0 || recommendations === undefined || loading ? null : (<TourRecommendationList {...recommendations}></TourRecommendationList>)}
             </div>
-
         </>
     );
 }
