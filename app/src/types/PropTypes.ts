@@ -28,6 +28,8 @@ export type TourRecommendationCardProp = {
         website: string;
 }
 
+export type UUID = string;
+
 export type TourRecommendationListProp = {
         tourRecommendationList: {
                 name: string;
@@ -36,6 +38,7 @@ export type TourRecommendationListProp = {
                 entry: number;
                 website: string;
         }[];
+        key: UUID
 }
 
 export type TourRecommendationFormProps = {

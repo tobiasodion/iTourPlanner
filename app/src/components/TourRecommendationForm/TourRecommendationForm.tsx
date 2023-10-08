@@ -2,6 +2,7 @@ import { useState } from "react";
 import { TourRecommendationCardProp, TourRecommendationFormProps, TourRecommendationListProp } from "../../types/PropTypes";
 import './TourRecommendationForm.css';
 import { getCompletion } from "../../services/recommender-service";
+import { generateRandomUUID } from "../../helper/UuidHelper";
 
 function TourRecommendationForm(props: TourRecommendationFormProps) {
     const [selectedCity, setSelectedCity] = useState<string>('');
@@ -48,38 +49,54 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
                         with the following structure: An array containing five objects. 
                         Each object will contain properties name, description, address, entry and website`
 
-        try {
-            const result = await getCompletion(prompt);
+        const sesstionKey = `${selectedCity}:${selectedInterest}`;
+        const sessionValue = sessionStorage.getItem(sesstionKey);
 
-            //Regex to find the array string in the result from gpt
-            const regex = /\[[^\]]+\]/g;
-            const matches = result.match(regex);
+        if (sessionValue !== null) {
+            const recommendations: TourRecommendationCardProp[] = JSON.parse(sessionValue);
 
-            if (!matches || matches.length === 0) {
-                props.onLoading(false);
-                throw new Error(`Invalid JSON string result. Result: ${result}`);
-            }
-
-            const match = matches[0];
-
-            const recommendations: TourRecommendationCardProp[] = JSON.parse(match);
-
-            if (!recommendations || recommendations.length === 0) {
-                props.onLoading(false);
-                throw new Error(`Empty JSON array. JSON: ${recommendations}`);
-            }
-
-            let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: recommendations };
+            let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: recommendations, key : generateRandomUUID() };
             props.onRecommendationsChange({ ...tourRecommendationListData });
             props.onLoading(false);
             setIsButtonDisabled(false);
-        } catch (error) {
-            //log error
-            alert(`Oops! We could not get your recommendations. Please try again`);
-            props.onLoading(false);
-            setIsButtonDisabled(false);
-            let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: [] };
-            props.onRecommendationsChange({ ...tourRecommendationListData });
+        }
+
+        else {
+            try {
+                const result = await getCompletion(prompt);
+
+                //Regex to find the array string in the result from gpt
+                const regex = /\[[^\]]+\]/g;
+                const matches = result.match(regex);
+
+                if (!matches || matches.length === 0) {
+                    props.onLoading(false);
+                    throw new Error(`Invalid JSON string result. Result: ${result}`);
+                }
+
+                const match = matches[0];
+
+                const recommendations: TourRecommendationCardProp[] = JSON.parse(match);
+
+                if (!recommendations || recommendations.length === 0) {
+                    props.onLoading(false);
+                    throw new Error(`Empty JSON array. JSON: ${recommendations}`);
+                }
+
+                sessionStorage.setItem(sesstionKey, JSON.stringify(recommendations));
+
+                let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: recommendations, key : generateRandomUUID() };
+                props.onRecommendationsChange({ ...tourRecommendationListData });
+                props.onLoading(false);
+                setIsButtonDisabled(false);
+            } catch (error) {
+                //log error
+                alert(`Oops! We could not get your recommendations. Please try again`);
+                props.onLoading(false);
+                setIsButtonDisabled(false);
+                let tourRecommendationListData: TourRecommendationListProp = { tourRecommendationList: [], key : '' };
+                props.onRecommendationsChange({ ...tourRecommendationListData });
+            }
         }
     };
 
