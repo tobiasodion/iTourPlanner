@@ -1,3 +1,4 @@
+import { generateRandomUUID } from "../helper/UuidHelper";
 import { AppMenuListProp, TourRecommendationListProp } from "../types/PropTypes";
 
 export const appMenuListData: AppMenuListProp = {
@@ -54,5 +55,6 @@ export const tourRecommendationListData: TourRecommendationListProp = {
             entry: 0,
             website: "https://parislibrairie.fr/"
         }
-    ]
+    ],
+    key : generateRandomUUID()
 }
