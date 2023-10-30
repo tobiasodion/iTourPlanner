@@ -1,0 +1,55 @@
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe-form input[type="email"] {
+    line-height: 1.8;
+    font-weight: 300;
+    font-family: inherit;
+    width: 90%;
+}
+
+.subscribe-form .form-group {
+    width: 100%
+}
+
+.subscribe-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 7px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-weight: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.subscribe-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Disabled button styles */
+.subscribe-form button.disabled-button {
+    pointer-events: none;
+    /* Disable pointer events to prevent hover effects */
+    background-color: #ccc;
+    /* Change the background color for disabled state */
+    cursor: not-allowed;
+    /* Change cursor style */
+}
+
+/* Disabled button styles */
+.subscribe-form button.disabled-button:hover {
+    background-color: #ccc;
+}
+
+@media (min-width: 601px) {
+
+    .subscribe-form {
+        padding: 2%;
+    }
+}
