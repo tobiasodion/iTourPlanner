@@ -1,6 +1,7 @@
+import AppMenuList from "../components/AppMenuList/AppMenuList";
 import BlogArticleSummaryList from "../components/BlogArticleSummaryList/BlogArticleSummaryList";
 import BlogSectionHeading from "../components/BlogSectionHeading/BlogSectionHeading";
-import { headerBlogArticleSummaryListData, latestBlogArticleSummaryListData, topBlogArticleSummaryListData } from "../data/PropData";
+import { appMenuListData, headerBlogArticleSummaryListData, latestBlogArticleSummaryListData, topBlogArticleSummaryListData } from "../data/PropData";
 
 function Blog() {
     return (
@@ -13,7 +14,8 @@ function Blog() {
                 </div>
                 <BlogSectionHeading sectionHeading="Latest"></BlogSectionHeading>
                 <BlogArticleSummaryList {...latestBlogArticleSummaryListData}></BlogArticleSummaryList>
-                <BlogSectionHeading sectionHeading="Book a Tour"></BlogSectionHeading>
+                <BlogSectionHeading sectionHeading="Planning a Trip?"></BlogSectionHeading>
+                <AppMenuList {...appMenuListData}></AppMenuList>
             </div>
         </>
     )

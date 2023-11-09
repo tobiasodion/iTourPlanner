@@ -19,6 +19,7 @@ function Footer() {
           <div className='menu'>
             <ul>
               <li>iTourParis</li>
+              <li>Meet our Team</li>
               <li>Contact Us</li>
               <li>Our Services</li>
             </ul>

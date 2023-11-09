@@ -11,6 +11,12 @@ export const appMenuListData: AppMenuListProp = {
         },
         {
             id: 2,
+            name: "Get a Trip Plan",
+            description: "Our AI bot helps you make the most of your trip by creating the best itinerary",
+            link: "/tour-recommender"
+        },
+        {
+            id: 3,
             name: "Book a Tour Guide",
             description: "Customize your Paris tour and book a tour guide",
             link: "/tour-guide"

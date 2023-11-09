@@ -7,7 +7,7 @@ function NavBar() {
     <div className="navbar">
       <ul>
         <li><Link to="/">iTourParis</Link></li>
-        <li className='active'><Link to='/blog'>Blog</Link></li>
+        <li className='active'><Link to='/tour-guide'>Book a Tour Guide</Link></li>
       </ul>
     </div>
   );
