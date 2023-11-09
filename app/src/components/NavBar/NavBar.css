@@ -23,11 +23,15 @@
 
 .navbar .active a {
     background-color: #E80C3E;
+    border-radius: 15px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 6px;
+    margin-right: 6px;
 }
 
 .app-menu-item a {
     background-color: #E80C3E;
-
 }
 
 .navbar li a {

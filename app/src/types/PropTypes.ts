@@ -1,5 +1,11 @@
 import { ReactNode } from "react";
 
+export enum BlogArticleSummaryType {
+        Header,
+        Top,
+        Latest,
+}
+
 export type AppMenuCardProp = {
         id: number;
         name: string;
@@ -49,4 +55,30 @@ export type TourRecommendationFormProps = {
 export type SpinnerProps = {
         spinnerDiameter: number;
         loadingMessages: string[];
+}
+
+export type BlogArticleSummaryProp = {
+        id: number;
+        category: string;
+        title: string;
+        author: string;
+        time: string;
+        date: string;
+        blogArticleSummaryType: BlogArticleSummaryType;
+}
+
+export type BlogArticleSummaryListProp = {
+        blogArticleSummaryList: {
+                id: number;
+                category: string;
+                title: string;
+                author: string;
+                time: string;
+                date: string;
+                blogArticleSummaryType: BlogArticleSummaryType;
+        }[];
+}
+
+export type BlogSectionHeadingProp = {
+        sectionHeading: string
 }

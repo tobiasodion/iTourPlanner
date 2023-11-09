@@ -1,3 +1,19 @@
+.footer {
+    background-color: whitesmoke;
+    padding: 1% 5%;
+    padding-bottom: 45px;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer .menu {
+    line-height: 1.6;
+    font-weight: 300;
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -8,4 +24,5 @@ footer {
 footer p {
     color: #196AB1;
     text-align: center;
+    font-size: small;
 }

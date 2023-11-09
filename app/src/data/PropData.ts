@@ -1,5 +1,5 @@
 import { generateRandomUUID } from "../helper/UuidHelper";
-import { AppMenuListProp, TourRecommendationListProp } from "../types/PropTypes";
+import { AppMenuListProp, BlogArticleSummaryListProp, BlogArticleSummaryType, TourRecommendationListProp } from "../types/PropTypes";
 
 export const appMenuListData: AppMenuListProp = {
     appMenuList: [
@@ -11,6 +11,12 @@ export const appMenuListData: AppMenuListProp = {
         },
         {
             id: 2,
+            name: "Get a Trip Plan",
+            description: "Our AI bot helps you make the most of your trip by creating the best itinerary",
+            link: "/tour-recommender"
+        },
+        {
+            id: 3,
             name: "Book a Tour Guide",
             description: "Customize your Paris tour and book a tour guide",
             link: "/tour-guide"
@@ -56,5 +62,83 @@ export const tourRecommendationListData: TourRecommendationListProp = {
             website: "https://parislibrairie.fr/"
         }
     ],
-    key : generateRandomUUID()
+    key: generateRandomUUID()
+}
+
+export const headerBlogArticleSummaryListData: BlogArticleSummaryListProp = {
+    blogArticleSummaryList: [
+        {
+            id: 1,
+            category: "Fashion",
+            title: "Top Fashion Tours in Paris",
+            author: "Tobias Odion",
+            time: "12:23 AM GMT +2",
+            date: "October 28, 2023",
+            blogArticleSummaryType: BlogArticleSummaryType.Header
+        }
+    ]
+}
+
+export const topBlogArticleSummaryListData: BlogArticleSummaryListProp = {
+    blogArticleSummaryList: [
+        {
+            id: 1,
+            category: "Fashion",
+            title: "Top Fashion Tours in Paris",
+            author: "Tobias Odion",
+            time: "12:23 AM GMT +2",
+            date: "October 28, 2023",
+            blogArticleSummaryType: BlogArticleSummaryType.Top
+        },
+        {
+            id: 2,
+            category: "Fashion",
+            title: "Top Fashion Tours in Paris",
+            author: "Tobias Odion",
+            time: "12:23 AM GMT +2",
+            date: "October 28, 2023",
+            blogArticleSummaryType: BlogArticleSummaryType.Top
+        },
+        {
+            id: 3,
+            category: "Fashion",
+            title: "Top Fashion Tours in Paris",
+            author: "Tobias Odion",
+            time: "12:23 AM GMT +2",
+            date: "October 28, 2023",
+            blogArticleSummaryType: BlogArticleSummaryType.Top
+        }
+    ]
+}
+
+export const latestBlogArticleSummaryListData: BlogArticleSummaryListProp = {
+    blogArticleSummaryList: [
+        {
+            id: 1,
+            category: "Fashion",
+            title: "Top Fashion Tours in Paris",
+            author: "Tobias Odion",
+            time: "12:23 AM GMT +2",
+            date: "October 28, 2023",
+            blogArticleSummaryType: BlogArticleSummaryType.Latest
+        },
+        {
+            id: 2,
+            category: "Fashion",
+            title: "Top Fashion Tours in Paris",
+            author: "Tobias Odion",
+            time: "12:23 AM GMT +2",
+            date: "October 28, 2023",
+            blogArticleSummaryType: BlogArticleSummaryType.Latest
+        },
+        {
+            id: 3,
+            category: "Fashion",
+            title: "Top Fashion Tours in Paris",
+            author: "Tobias Odion",
+            time: "12:23 AM GMT +2",
+            date: "October 28, 2023",
+            blogArticleSummaryType: BlogArticleSummaryType.Latest
+        }
+    ]
 }

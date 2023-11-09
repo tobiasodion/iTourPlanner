@@ -1,0 +1,50 @@
+.blog-article-summary {
+    border-bottom: 1px solid lightgray;
+}
+
+.blog-article-summary-category {
+    margin-bottom: 4%;
+    color: #196AB1;;
+}
+
+.blog-article-summary-title {
+    margin-top: 0px;
+    margin-bottom: 4%;
+    color: black;
+    letter-spacing: -.05em;
+    line-height: 1;
+}
+
+.blog-article-summary-authorname {
+    font-weight: 500;
+    font-size: small;
+    margin-bottom: 2%;
+}
+
+.blog-article-time-date {
+    font-size: smaller;
+    margin-bottom: 4%;
+}
+
+.blog-article-summary-description {
+    height: fit-content;
+    width: 100%;
+}
+
+.blog-article-summary-image {
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+
+.fit-image {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.blog-article-summary-flex {
+    display: flex;
+    flex-direction: row;
+}
