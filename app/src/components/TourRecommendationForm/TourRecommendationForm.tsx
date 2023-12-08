@@ -10,7 +10,7 @@ function TourRecommendationForm(props: TourRecommendationFormProps) {
     const [error, setError] = useState<string>('');
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-    const cities = ['Paris', 'Lagos', 'Barcelona', 'Lisbon'];
+    const cities = ['Paris', 'Lagos', 'Barcelona', 'Lisbon', 'Rome', 'Kampala'];
     const interests = ['Art', 'Sports', 'Music', 'Food'];
 
     const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
